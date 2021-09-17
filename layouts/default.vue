@@ -8,11 +8,12 @@
       </div>
       <div v-else>
         <v-btn text to="/login">Login</v-btn>
+        <v-btn text to="/register">Register</v-btn>
       </div>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <nuxt />
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
