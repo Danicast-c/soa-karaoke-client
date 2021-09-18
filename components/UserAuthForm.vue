@@ -30,7 +30,6 @@
       return {
         valid: false,
         showPassword: false,
-        hasName: false,
         userInfo: {
           email: '',
           password: ''
@@ -38,7 +37,12 @@
         ...validations
       }
     },
-    props: ["submitForm", "buttonText", "hasName"]
+    //props: ["submitForm", "buttonText", "hasName"]
+    props: {
+      submitForm: Function,
+      buttonText: String,
+      hasName: String,
+    }
   }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <h1>Register</h1>
-    <UserAuthForm buttonText="Register" :submitForm='registerUser'/>
+    <UserAuthForm buttonText="Register" :submitForm='registerUser' hasName='true' />
   </v-container>
 </template>
 
@@ -11,8 +11,11 @@ export default {
     
   },
   methods: {
-    registerUser(registerinfo){
-      alert("Boton presionado")
+    async registerUser(registrationInfo){
+      await this.$axios.post('/register',registrationInfo)
+      this.$auth.loginWith('local', {
+        data: registrationInfo
+      })
     }
   }
 }

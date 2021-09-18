@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <v-app-bar app color="green">
-      <h1>Karaoke 99</h1>
+      <v-btn text to="/"><h1>Karaoke 99</h1></v-btn>
       <v-spacer/>
       <div v-if="$auth.loggedIn">
-        <v-btn text>Logout</v-btn> 
+        <v-btn text @click="$auth.logout()">Logout</v-btn> 
       </div>
       <div v-else>
         <v-btn text to="/login">Login</v-btn>
@@ -18,7 +18,8 @@
 </template>
 
 <script>
+
 export default {
- 
+
 }
 </script>

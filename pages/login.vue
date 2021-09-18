@@ -11,8 +11,14 @@ export default {
     
   },
   methods: {
-    loginUser(logininfo){
-      alert("Boton presionado")
+    async loginUser(loginInfo){
+      try {
+        await this.$auth.loginWith('local',{
+        data: loginInfo
+        })
+      } catch (e) {
+        alert('Error in sign in.')
+      }
     }
   }
 }
