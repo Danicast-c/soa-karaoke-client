@@ -2,7 +2,7 @@
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
       <v-card class="logo py-4 d-flex justify-center">
-        <h1>INDEX</h1>
+        <h1>Main View</h1>
       </v-card>
       
     </v-col>
