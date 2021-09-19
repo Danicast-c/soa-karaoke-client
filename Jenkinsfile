@@ -1,15 +1,17 @@
-pipeline {
-  agent any
-  stages {
-    stage('Information') {
-      steps {
-        sh 'node -v'
-        sh 'npm -v'
-      }
+
+pipeline { 
+    agent {
+        docker {
+            image 'node:16-alpine'
+            args '-p 3000:3000'
+        }
+    }
+    environment {
+        CI = 'true'
     }
     stage('Dependencies') {
       steps {
-        sh 'npm install'
+        sh 'npm ci --cache=".KaraokeCache"'
       }
     }
     stage('Unit Test') {
