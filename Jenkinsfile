@@ -13,13 +13,13 @@ pipeline {
       stages {
         stage('Dependencies') {
           steps {
-            milestone(label: 'Dependency resolve start', ordinal: 1)
+            milestone(label: 'Milestone: Resolving dependencies...', ordinal: 1)
             sh 'npm ci --cache=".KaraokeCache"'
           }
         }
         stage('Build') {
           steps {
-            milestone(label: 'Build start', ordinal: 2)
+            milestone(label: 'Milestone: Starting build...', ordinal: 2)
             sh 'npm run build'
           }
         }
@@ -45,7 +45,7 @@ pipeline {
           GOOGLE_SERVICE_ACCOUNT_KEY = credentials('google_service_acccount_key_soa_karaoke')
       }
       steps {
-        milestone(label: 'Deploy start', ordinal: 3)
+        milestone(label: 'Milestone: Starting deployment...', ordinal: 3)
         //Deploy to GCP
         sh """
           gcloud config set project ${GOOGLE_PROJECT_ID};
