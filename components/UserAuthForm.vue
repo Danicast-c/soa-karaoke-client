@@ -15,7 +15,12 @@
                   :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   @click:append="showPassword = !showPassword"
                   counter=true
-                  :rules="[required('password'), minLength('password', 8)]"
+                  :rules="[required('password'), minLength('password', 6)]"
+                  />
+    <v-switch v-model="userInfo.role"
+                  label="Premium user"
+                  value="premium"
+                  v-if="hasRole"
                   />
 
     <v-btn @click="submitForm(userInfo)" :disabled="!valid">{{ buttonText }}</v-btn>
@@ -32,7 +37,8 @@
         showPassword: false,
         userInfo: {
           email: '',
-          password: ''
+          password: '',
+          role: 'regular'
         },
         ...validations
       }
@@ -42,6 +48,7 @@
       submitForm: Function,
       buttonText: String,
       hasName: String,
+      hasRole: String,
     }
   }
 </script>
