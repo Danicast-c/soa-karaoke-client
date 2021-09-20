@@ -12,13 +12,13 @@ pipeline {
       }
       stages {
         stage('Dependencies') {
-          milestone 1
+          milestone(1)
           steps {
             sh 'npm ci --cache=".KaraokeCache"'
           }
         }
         stage('Build') {
-          milestone 2
+          milestone(2)
           steps {
             sh 'npm run build'
           }
@@ -31,8 +31,8 @@ pipeline {
       }
     }
     lock(resource: 'gcp-deploy') {
-      milestone 3
       stage('Deploy') {
+        milestone(3)
         agent {
           docker {
             image 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
