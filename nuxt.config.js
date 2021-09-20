@@ -64,7 +64,7 @@ export default {
     build: {},
 
     axios: {
-        baseURL: 'http://api.karaoke.josvar.com'
+        baseURL: 'https://api.karaoke.josvar.com'
     },
 
     auth: {
@@ -81,9 +81,9 @@ export default {
                     // autoFetch: true
                 },
                 endpoints: {
-                    login: { url: '/sessions', method: 'post' },
-                    logout: { url: '/auth/logout', method: 'post' },
-                    user: { url: '/auth/user', method: 'get' }
+                    login: { url: '/auth/login', method: 'post' },
+                    logout: { url: '/users/logout', method: 'post' },
+                    user: { url: '/me', method: 'get' }
                 }
             }
         }
