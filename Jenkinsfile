@@ -17,17 +17,16 @@ pipeline {
             sh 'npm ci --cache=".KaraokeCache"'
           }
         }
-        stage('Unit Test') {
-          steps {
-            sh 'npm run unit'
-          }
-        }
         stage('Build') {
           steps {
             sh 'npm run build'
-            sh 'npm run start'
           }
         }
+        // stage('Unit Test') {
+        //   steps {
+        //     sh 'npm run unit'
+        //   }
+        // }
       }
     }
     stage('Deploy') {
