@@ -12,14 +12,14 @@ pipeline {
       }
       stages {
         stage('Dependencies') {
-          milestone(1)
           steps {
+            milestone(label: 'Dependency resolve start', ordinal: 1)
             sh 'npm ci --cache=".KaraokeCache"'
           }
         }
         stage('Build') {
-          milestone(2)
           steps {
+            milestone(label: 'Build start', ordinal: 2)
             sh 'npm run build'
           }
         }
@@ -30,33 +30,34 @@ pipeline {
         // }
       }
     }
-    lock(resource: 'gcp-deploy') {
-      stage('Deploy') {
-        milestone(3)
-        agent {
-          docker {
-            image 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
-            args '-u root'
-          }
+    stage('Deploy') {
+      options {
+        lock('gcp-deploy')
+      }
+      agent {
+        docker {
+          image 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
+          args '-u root'
         }
-        environment {
-            GOOGLE_PROJECT_ID = 'soa-karaoke'
-            GOOGLE_SERVICE_ACCOUNT_KEY = credentials('google_service_acccount_key_soa_karaoke')
-        }
-        steps {
-          //Deploy to GCP
-          sh """
-            gcloud config set project ${GOOGLE_PROJECT_ID};
-            gcloud auth activate-service-account --key-file \$GOOGLE_SERVICE_ACCOUNT_KEY;
+      }
+      environment {
+          GOOGLE_PROJECT_ID = 'soa-karaoke'
+          GOOGLE_SERVICE_ACCOUNT_KEY = credentials('google_service_acccount_key_soa_karaoke')
+      }
+      steps {
+        milestone(label: 'Deploy start', ordinal: 3)
+        //Deploy to GCP
+        sh """
+          gcloud config set project ${GOOGLE_PROJECT_ID};
+          gcloud auth activate-service-account --key-file \$GOOGLE_SERVICE_ACCOUNT_KEY;
 
-            gcloud app deploy --version=${BUILD_NUMBER};
-            echo "Deployed to GCP"
-            """
-        }
-        post {
-          always {
-            println "Result : ${currentBuild.result}"
-          }
+          gcloud app deploy --version=${BUILD_NUMBER};
+          echo "Deployed to GCP"
+          """
+      }
+      post {
+        always {
+          println "Result : ${currentBuild.result}"
         }
       }
     }
