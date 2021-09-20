@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+    mode: 'universal',
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         titleTemplate: '%s - soa-karaoke-client',
@@ -63,7 +64,7 @@ export default {
     build: {},
 
     axios: {
-        baseURL: 'https://api.karaoke.josvar.com'
+        baseURL: 'http://api.karaoke.josvar.com'
     },
 
     auth: {

@@ -2,19 +2,22 @@ runtime: nodejs16
 service_account: jenkins-account@soa-karaoke.iam.gserviceaccount.com
 service: client
 
+automatic_scaling:
+  min_instances: 0
+
 handlers:
-  - url: /_nuxt
-    static_dir: .nuxt/dist/client
-    secure: always
+- url: /_nuxt
+  static_dir: .nuxt/dist/client
+  secure: always
 
-  - url: /(.*\.(gif|png|jpg|ico|txt))$
-    static_files: static/\1
-    upload: static/.*\.(gif|png|jpg|ico|txt)$
-    secure: always
+- url: /(.*\.(gif|png|jpg|ico|txt))$
+  static_files: static/\1
+  upload: static/.*\.(gif|png|jpg|ico|txt)$
+  secure: always
 
-  - url: /.*
-    script: auto
-    secure: always
+- url: /.*
+  script: auto
+  secure: always
 
 env_variables:
   HOST: '0.0.0.0'
