@@ -1,7 +1,11 @@
 <template>
   <v-form v-model="valid">
-    <v-text-field v-model="userInfo.name" 
+    <v-text-field v-model="userInfo.firstName" 
                   label="Name" 
+                  :rules="[required('name')]"
+                  v-if="hasName" />
+    <v-text-field v-model="userInfo.lastName" 
+                  label="Last Name" 
                   :rules="[required('name')]"
                   v-if="hasName" />
 
@@ -36,6 +40,8 @@
         valid: false,
         showPassword: false,
         userInfo: {
+          firstName: '',
+          lastName: '',
           email: '',
           password: '',
           role: 'regular'

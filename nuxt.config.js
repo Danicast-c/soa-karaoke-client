@@ -14,7 +14,7 @@ export default {
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: '' },
             { name: 'format-detection', content: 'telephone=no' },
-            { namer: 'theme-color', content: '#4caf50'}
+            { name: 'theme-color', content: '#4caf50'}
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -68,7 +68,7 @@ export default {
     build: {},
 
     axios: {
-        baseURL: 'https://api.karaoke.josvar.com'
+        baseURL: 'http://q.josvar.com:3000'
     },
 
     auth: {

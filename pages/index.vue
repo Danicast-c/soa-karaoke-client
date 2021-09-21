@@ -2,16 +2,19 @@
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
       <v-card class="logo py-4 d-flex justify-center">
-        <h1>Main View</h1>
-        <div v-if="$auth.loggedIn">
-          <h2> {{$auth.email}} </h2>
-        </div>
+        <h1>Songs:</h1>
       </v-card>
-      <ul>
-        <!-- <li v-for="item in songs" v-bind:key="item">
-          {{ item.name }}
-        </li> -->
-      </ul>
+<!-- tabla -->
+      <v-data-table
+        :headers="headers"
+        :items="songs"
+        :items-per-page="5"
+        class="elevation-1"
+        :loading="loadingVar"
+        loading-text="Loading... Please wait"
+        @click:row="handleClick"
+      ></v-data-table>
+
     </v-col>
   </v-row>
 </template>
@@ -20,11 +23,33 @@
 export default {
   data () {
     return { 
-      songs: [
-        {name: 'La gasolina'},
-        {name: 'La bandolera'},
-      ]
+      headers: [
+        {text: 'Title', value: 'title'},
+        {text: 'Artist', value: 'artist'},
+        {text: 'Album', value: 'album'},
+      ],
+      loadingVar:true, 
+      songs: [],
+
     }
   },
+  mounted() {
+    this.getSong()
+  },
+  methods: {
+    getSong: async function(){
+      let response = await this.$axios.$get('/songs')
+      this.songs = response;
+      this.loadingVar = false;
+    },
+   
+    handleClick(row) {
+      this.songs.map((item, index) => {
+          item.selected = item === row
+          this.$set(this.songs, index, item)
+      })
+      alert(row.title)
+    },
+  }
 }
 </script>

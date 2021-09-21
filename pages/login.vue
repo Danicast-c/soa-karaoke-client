@@ -16,7 +16,6 @@ export default {
         let response = await this.$auth.loginWith('local',{
         data: loginInfo
         })
-         console.log(response)
         alert('Correcto :'+ response.data.access_token )
         //this.$auth.strategy.token.set(response.data.access_token)
         alert('token: '+this.$auth.strategy.token.get())
