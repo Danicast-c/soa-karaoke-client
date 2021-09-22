@@ -34,10 +34,10 @@ export default {
     }
   },
   mounted() {
-    this.getSong()
+    this.getSongs()
   },
   methods: {
-    getSong: async function(){
+    getSongs: async function(){
       let response = await this.$axios.$get('/songs')
       this.songs = response;
       this.loadingVar = false;
@@ -48,7 +48,6 @@ export default {
           item.selected = item === row
           this.$set(this.songs, index, item)
       })
-      alert(row.title)
       this.$router.push('player/'+row.id);
     },
   }
