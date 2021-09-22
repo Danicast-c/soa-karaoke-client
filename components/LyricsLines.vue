@@ -93,7 +93,6 @@ export default {
         onEdit(index) {
             if (this.edit == index && (this.validateMmSsMs(this.edit_line.start_s)) && (this.validateMmSsMs(this.edit_line.end_s))) {
                 //guardar
-                console.log('tag', '');
                 var current_line = this.lines.filter((item) => item.index == index)[0];
                 current_line.start_s = this.edit_line.start_s;
                 current_line.start = this.timeStringToInt(this.edit_line.start_s);
@@ -128,7 +127,6 @@ export default {
         },
         deleteTableRow: function (item) {
             // this.lines = this.lines.filter((item) => item.index != index);
-            console.log('tag', item);
             var index = this.lines.indexOf(item);
             if (index > -1) {
                 this.lines.splice(index, 1);
@@ -140,7 +138,6 @@ export default {
                 let seconds = parseInt(timeString.substring(3, 5));
                 let miliseconds = timeString.substring(6);
                 miliseconds = miliseconds != "" ? parseInt(miliseconds) : 0;
-                console.log('mili', miliseconds)
                 return minutes * 60000 + seconds * 1000 + miliseconds;
             } else {
                 return 0
