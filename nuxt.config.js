@@ -68,8 +68,12 @@ export default {
     build: {},
 
     axios: {
-        baseURL: 'http://q.josvar.com:3000'
+        // baseURL: 'http://q.josvar.com:3000'
+        baseURL: 'https://api.karaoke.josvar.com/'
+
     },
+
+
 
     auth: {
         strategies: {

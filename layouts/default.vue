@@ -5,11 +5,13 @@
       <v-spacer/>
       <div v-if="$auth.loggedIn">
         <v-btn text @click="logout()">Logout</v-btn> 
+        <v-btn text to="/edit_song">Add Song</v-btn>
       </div>
       <div v-else>
         <v-btn text to="/login">Login</v-btn>
         <v-btn text to="/register">Register</v-btn>
       </div>
+
     </v-app-bar>
     <v-main>
       <nuxt />
