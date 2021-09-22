@@ -11,8 +11,8 @@
         :items-per-page="5"
         class="elevation-1"
         :loading="loadingVar"
-        loading-text="Loading... Please wait"
-        @click:row="handleClick"
+        loading-text="Loading Songs..."
+        @click:row="songClick"
       ></v-data-table>
 
     </v-col>
@@ -43,12 +43,13 @@ export default {
       this.loadingVar = false;
     },
    
-    handleClick(row) {
+    songClick(row) {
       this.songs.map((item, index) => {
           item.selected = item === row
           this.$set(this.songs, index, item)
       })
       alert(row.title)
+      this.$router.push('player/'+row.id);
     },
   }
 }
