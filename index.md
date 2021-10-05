@@ -1,12 +1,25 @@
-## Welcome to GitHub Pages
+## Karaoke 99
 
-You can use the [editor on GitHub](https://github.com/Danicast-c/soa-karaoke-client/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Karaoke 99 es una plataforma de Karaoke que permite a los usuarios registrarse y acceder con su cuenta a una lista de canciones para cantar, si los usuarios son de tipo premium tienen la opcion de modificar canciónes y sus letras asi como añadir canciones nuevas al sistema.
 
-### Markdown
+### Diseño e Implementación
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### Lenguajes de Programación
+#### Frameworks / Toolkits
+#### Base de Datos
+#### Estandares de Programación
+#### Organización de los proyectos de código.
+
+
+
+
+
+<!-- You can use the [editor on GitHub](https://github.com/Danicast-c/soa-karaoke-client/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files. -->
+
+<!-- Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files. -->
+
+<!-- Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
 Syntax highlighted code block
@@ -24,8 +37,8 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```
-
+``` -->
+<!-- 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
@@ -34,4 +47,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out. -->
