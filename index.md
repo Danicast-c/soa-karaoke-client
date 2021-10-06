@@ -4,10 +4,17 @@
 Karaoke 99 es una plataforma de Karaoke que permite a los usuarios registrarse y acceder con su cuenta a una lista de canciones para cantar, si los usuarios son de tipo premium tienen la opcion de modificar canciónes y sus letras asi como añadir canciones nuevas al sistema.
 
 ### Diseño e Implementación
+#### Diagramas C4
+##### Nivel 1: Contexto
+![lvl1](https://user-images.githubusercontent.com/18470228/136119457-d01267fc-454d-4763-a263-62b07d8865b0.png)
 
 #### Lenguajes de Programación
+##### Vue - JavaScript
 #### Frameworks / Toolkits
+##### Nuxt JS
+##### Nest JS
 #### Base de Datos
+##### MongoDB
 #### Estandares de Programación
 #### Organización de los proyectos de código.
 
