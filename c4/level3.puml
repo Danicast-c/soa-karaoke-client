@@ -28,4 +28,5 @@ Container_Boundary(api, "API Application") {
 
 Rel(spa, sign, "Usa", "JSON/HTTPS")
 Rel(spa, accounts, "Usa", "JSON/HTTPS")
+Rel(spa, songs, "Usa", "JSON/HTTPS")
 @enduml
