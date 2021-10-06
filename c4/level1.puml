@@ -1,0 +1,8 @@
+@startuml level1
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(personAlias, "Cliente", "El interactua con el cliente web")
+Container(containerAlias, "Karaoke System", "software system", "Plataforma e interfaz para navegar la herramienta de Karaoke")
+
+Rel(personAlias, containerAlias, "Inicia sesión, escoge canciónes, las agrega, las remueve o modifica")
+@enduml

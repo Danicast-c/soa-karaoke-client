@@ -1,0 +1,27 @@
+@startuml level2
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/nodejs.puml
+
+Person(personAlias, "Cliente", "Interactua con la interfaz, esta registrado en la plataforma.",$sprite="person2")
+
+System_Boundary(c1, "Karaoke System",) {
+
+Container(web_interfaz, "Web Interface", "Vue, JavaScript", $descr="Interfaz de navegación de la plataforma")
+
+Container(web_app, "Web Application", "Node, NuxtJS", "Cliente web que se encarga de generar el single page application", )
+
+Container(api, "API", "NestJS", "Se encarga de servir y recibir toda la informacion, se comunica con la base de datos",)
+
+ContainerDb(db, "Database", "Mongo DB", "Almacena datos de usuario, canciones, letras, etc.")
+}
+
+Rel(personAlias, web_interfaz, "Uses",)
+
+Rel(personAlias, web_app, "Uses", "HTTPS")
+Rel(web_app, web_interfaz, "Delivers")
+Rel(web_app, api, "Uses", "JSON/HTTPS")
+Rel(api, db, "Reads/Writes")
+@enduml
