@@ -12,6 +12,7 @@ Karaoke 99 es una plataforma de Karaoke que permite a los usuarios registrarse y
 ##### Vue - JavaScript
 #### Frameworks / Toolkits
 ##### Nuxt JS
+Se decidio utitizar el framework para Vue llamado NuxtJS, este framework es muy util para la construcción del front end, facilita el renderizado del servidor, genera rutas automaticamente, entre otras cosas. Esto facilita y permite generar una interfaz sencilla y limpia que permite desarrollar la pagina de Karaoke rapidamente. Este framework es muy sencillo de aprender y esta basado en next.
 ##### Nest JS
 #### Base de Datos
 ##### MongoDB
