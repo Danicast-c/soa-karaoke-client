@@ -1,23 +1,25 @@
-## Karaoke 99
+# Karaoke 99
 
 
 Karaoke 99 es una plataforma de Karaoke que permite a los usuarios registrarse y acceder con su cuenta a una lista de canciones para cantar, si los usuarios son de tipo premium tienen la opcion de modificar canciónes y sus letras asi como añadir canciones nuevas al sistema.
 
-### Diseño e Implementación
-#### Diagramas C4
-##### Nivel 1: Contexto
+## Diseño e Implementación
+### Diagramas C4
+#### Nivel 1: Contexto
 ![lvl1](https://user-images.githubusercontent.com/18470228/136119457-d01267fc-454d-4763-a263-62b07d8865b0.png)
 
-#### Lenguajes de Programación
-##### Vue - JavaScript
-#### Frameworks / Toolkits
-##### Nuxt JS
+### Lenguajes de Programación
+#### Vue - JavaScript
+### Frameworks / Toolkits
+#### Nuxt JS
 Se decidio utitizar el framework para Vue llamado NuxtJS, este framework es muy util para la construcción del front end, facilita el renderizado del servidor, genera rutas automaticamente, entre otras cosas. Esto facilita y permite generar una interfaz sencilla y limpia que permite desarrollar la pagina de Karaoke rapidamente. Este framework es muy sencillo de aprender y esta basado en next.
-##### Nest JS
-#### Base de Datos
-##### MongoDB
-#### Estandares de Programación
-#### Organización de los proyectos de código.
+
+Mediante Nuxt se programó toda la interfaz la cuel cuenta con pantallas iniciales de signup y login, se tiene un menu principal donde se encuentran la lista de canciones para reproducir, en esta pantalla es posible accesar a la vista para editar canciones o bien incluir nuevas o eliminarlas.
+#### Nest JS
+### Base de Datos
+#### MongoDB
+### Estandares de Programación
+### Organización de los proyectos de código.
 
 
 
