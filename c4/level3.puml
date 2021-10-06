@@ -1,0 +1,31 @@
+@startuml level3
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Component.puml
+
+' LAYOUT_WITH_LEGEND()
+
+title Diagrama de componentes
+
+Container(spa, "Single Page Application", "Javascript y Vue", "Interfaz de navegación de la plataforma, el usuario interactúa mediante su navegador web.")
+ContainerDb(db, "Database", "MongoDB", "Almacena la información de los usuarios, credenciales, metadatos de canciones.")
+System_Ext(gfs, "Google File Storage", "Almacena los archivos de las canciones.")
+
+Container_Boundary(api, "API Application") {
+    Component(sign, "Sign In Controller", "MVC Rest Controlle", "Permite a los usuarios autenticarse e iniciar sesión en el sistema.")
+    Component(accounts, "User Controller", "MVC Rest Controller", "Permite a los usuarios consultar y modificar sus datos personales.")
+    Component(songs, "Songs Controller", "MVC Rest Controller", "Permite el listado, modificación y subida de canciones.")
+    Component(security, "JWT / Passport Component", "NestJS Service", "Provee la funcionalidad de autenticación criptográficamente segura, incluyendo la creación de tokens JWT.")
+    Component(filefacade, "File Storage Facade", "NestJS Service", "Se encarga de conectarse con Google File Storage para obtener los archivos de las canciones y servirlos al controlador.")
+
+    Rel(sign, security, "Usa")
+    Rel(songs, filefacade, "Usa")
+    Rel(security, db, "Lee y escribe a", "TypeORM")
+    Rel(songs, db, "Lee y escribe a", "TypeORM")
+    Rel(accounts, db, "Lee y escribe a", "TypeORM")
+    Rel(filefacade, gfs, "Accesa", "HTTPS")
+}
+
+Rel(spa, sign, "Usa", "JSON/HTTPS")
+Rel(spa, accounts, "Usa", "JSON/HTTPS")
+@enduml

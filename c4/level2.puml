@@ -9,11 +9,11 @@ Person(personAlias, "Cliente", "Interactua con la interfaz, esta registrado en l
 
 System_Boundary(c1, "Karaoke System",) {
 
-Container(web_interfaz, "Web Interface", "Vue, JavaScript", $descr="Interfaz de navegación de la plataforma")
+Container(web_interfaz, "Single Page Application", "Vue, JavaScript", $descr="Interfaz de navegación de la plataforma, el usuario interactúa mediante su navegador web.")
 
-Container(web_app, "Web Application", "Node, NuxtJS", "Cliente web que se encarga de generar el single page application", )
+Container(web_app, "Web Application", "Node, NuxtJS", "Cliente web que se encarga de generar el single page application.", )
 
-Container(api, "API", "NestJS", "Se encarga de servir y recibir toda la informacion, se comunica con la base de datos",)
+Container(api, "API", "NestJS", "Se encarga de servir y recibir toda la informacion, se comunica con la base de datos.",)
 
 ContainerDb(db, "Database", "Mongo DB", "Almacena datos de usuario, canciones, letras, etc.")
 }

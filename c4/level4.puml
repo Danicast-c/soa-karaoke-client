@@ -1,0 +1,65 @@
+@startuml level4
+class AppService {
+    +getHello(): string
+}
+enum Role {
+    ADMIN
+    REGULAR
+    PREMIUM
+}
+class User {
+    +id: ObjectID
+    +password: string
+    +firstName: string
+    +lastName: string
+    +email: string
+    +role: Role
+    +nameToUpperCase(): void
+}
+class CreateUserDto {
+    +password: string
+    +email: string
+    +firstName: string
+    +lastName: string
+}
+class UpdateUserDto {
+    +role: Role
+}
+class UsersService {
+    -usersRepository: Repository<User>
+    +findAll(): Promise<User[]>
+    +findByEmail(email: string): Promise<User>
+    +findOne(id: string): Promise<User>
+    +remove(id: string): Promise<void>
+    +create(createUserDto: CreateUserDto): Promise<CreateUserDto & User>
+    +update(id: ObjectID, updateUserDto: UpdateUserDto): Promise<User>
+}
+class AuthService {
+    -usersService: UsersService
+    -jwtService: JwtService
+    +validateUser(email: string, pass: string): Promise<any>
+    +login(user: User): Promise<{ access_token: string; }>
+}
+class LocalAuthGuard
+class JwtAuthGuard {
+    -reflector: Reflector
+    +canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean>
+}
+class AppController {
+    -appService: AppService
+    -authService: AuthService
+    +login(req: any): Promise<{ access_token: string; }>
+    +getHello(): string
+    +getProfile(req: any): any
+}
+User --> "1" Role
+UpdateUserDto --> "1" Role
+UsersService --> "1" User
+UsersService --> "*" User
+UsersService --> "1" CreateUserDto
+UsersService --> "1" UpdateUserDto
+AuthService --> "1" UsersService
+AuthService --> "1" User
+AppController --> "1" AppService
+AppController --> "1" AuthService
+@enduml
