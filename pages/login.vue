@@ -16,11 +16,11 @@ export default {
         let response = await this.$auth.loginWith('local',{
         data: loginInfo
         })
-        alert('Correcto :'+ response.data.access_token )
+        console.log('Correcto :'+ response.data.access_token )
         //this.$auth.strategy.token.set(response.data.access_token)
-        alert('token: '+this.$auth.strategy.token.get())
-        alert('logged in? '+this.$auth.loggedIn)
-        alert('email: '+this.$auth.user.email)
+        console.log('token: '+this.$auth.strategy.token.get())
+        console.log('logged in? '+this.$auth.loggedIn)
+        console.log('email: '+this.$auth.user.email)
       } catch (e) {
         alert('Error in sign in: '+e)
       }

@@ -61,15 +61,29 @@ export default {
         }
     },
     router: {
-        middleware: ['auth']
+        middleware: ['auth'],
+        extendRoutes(routes, resolve) {
+            routes.push({
+                name: 'edit_song2',
+                path: '/edit_song/:id',
+                component:  'pages/edit_song.vue'
+              })
+            // Add some routes here ...
+      
+            // and then sort them
+          }
+
     },
+
+
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
 
     axios: {
         // baseURL: 'http://q.josvar.com:3000'
-        baseURL: 'https://api.karaoke.josvar.com/'
+        // baseURL: 'https://api.karaoke.josvar.com/'
+        baseURL: 'http://localhost:3000'
 
     },
 
