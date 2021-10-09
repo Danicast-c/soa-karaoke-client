@@ -17,6 +17,7 @@
         "parse-srt": "^1.0.0-alpha",
         "srt-convert-json": "^1.0.3",
         "vue-plyr": "^7.0.0",
+        "vee-validate": "^3.4.13",
         "vuetify": "^2.5.5"
     },
     "devDependencies": {
