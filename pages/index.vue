@@ -12,11 +12,15 @@
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
-        append-icon="mdi-magnify"
         label="Search"
         single-line
         hide-details
       ></v-text-field>
+      <!-- append-icon="mdi-magnify" -->
+      <v-btn @click="filterSongs">
+        search
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
     </v-card-title>
 
     <v-data-table
@@ -24,12 +28,12 @@
       :headers="filteredHeaders"
       :items="songs"
       :items-per-page="100"
-      :search="search"
       class="elevation-1"
       :loading="loadingVar"
       loading-text="Loading Songs..."
     >
       <!-- @click:row="songClick" -->
+      <!-- :search="search" -->
 
       <template v-slot:item.play="{ item }">
         <v-btn-toggle>
@@ -163,6 +167,10 @@ export default {
     //   this.buy_premium_dialog = true;
       console.log(song);
       this.$router.push("edit_song/" + song.id);
+    },
+    filterSongs: async function (){
+      let response = await this.$axios.$get("/songs/?q="+this.search);
+      this.songs = response;
     },
   },
 };
