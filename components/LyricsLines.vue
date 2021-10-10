@@ -1,12 +1,12 @@
 <template>
 <v-container>
     <v-data-table striped hover dark :items="lines" :headers="fields" :items-per-page="1000" :sort-by="start_s">
-        <template v-slot:item.text="{ value, item }">
+        <template v-slot:[`item.text`]="{ value, item }">
             <template v-if="edit != item.index">{{ value }}</template>
             <v-text-field v-else v-model="edit_line.text" :rules="[() => !!edit_line.text || 'This field is required']" />
         </template>
 
-        <template v-slot:item.start_s="{ value, item }">
+        <template v-slot:[`item.start_s`]="{ value, item }">
             <template v-if="edit != item.index">{{ value }}</template>
             <v-text-field v-else v-model="edit_line.start_s" :rules="[
             () =>
@@ -15,13 +15,13 @@
           ]" />
         </template>
 
-        <template v-slot:item.end_s="{ value, item }">
+        <template v-slot:[`item.end_s`]="{ value, item }">
             <template v-if="edit != item.index">{{ value }}</template>
             <v-text-field v-else v-model="edit_line.end_s" :rules="[() => !! validateMmSsMs(edit_line.end_s)||
               'Format should be: MM:ss.mmm',]" />
         </template>
 
-        <template v-slot:item.actions="{ item, item: { index } }">
+        <template v-slot:[`item.actions`]="{ item, item: { index } }">
             <v-btn-toggle>
                 <v-btn variant="primary" @click="onEdit(index)"  :disabled="edit!=null && edit!== index">
                     <!-- {{edit==index? "save":"edit"}} -->
@@ -33,6 +33,9 @@
                 </v-btn>
             </v-btn-toggle>
         </template>
+
+
+        
     </v-data-table>
     <v-btn variant="success" @click="addLine()"> Add line </v-btn>
 </v-container>
@@ -58,25 +61,25 @@ export default {
                     value: "start_s",
                     text: "Start time",
                     sortable: true,
-                    class: "col-3",
+                    width: "15%"
                 },
                 {
                     value: "end_s",
                     text: "End time",
                     sortable: false,
-                    class: "col-3",
+                    width: "15%"
                 },
                 {
                     value: "text",
                     text: "Line",
                     sortable: false,
-                    class: "col-4",
+                    width: "60%"
                 },
                 {
                     value: "actions",
                     text: "Actions",
                     sortable: false,
-                    class: "col-2",
+                    width: "10%"
                 },
             ],
         };

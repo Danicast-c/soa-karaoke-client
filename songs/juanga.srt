@@ -1,9 +1,9 @@
 {
-    "id": "614a9fb4d54c98000b5b7270",
+    "id": "61634454a78063000a02ca87",
     "title": "Have you ever seen the rain",
     "artist": "Juan Gabriel",
     "album": "Gracias al Sol",
-    "mp3": "https://www.youtube.com/watch?v=tqnfoRXKgLs",
+    "mp3": "https://storage.googleapis.com/soa-karaoke-canciones/0d0e2bba-e990-4c00-104e-cb1dcfa029ea",
     "lyrics": [
         {
             "id": 1,
