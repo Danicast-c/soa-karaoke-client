@@ -147,7 +147,7 @@ export default {
       }
       this.lines.push({
         startTime: 0,
-        endTime: 5000,
+        endTime: 5.000,
         start_s: "00:00.000",
         end_s: "00:05.000",
         text: "",
@@ -169,7 +169,7 @@ export default {
         let seconds = parseInt(timeString.substring(3, 5));
         let miliseconds = timeString.substring(6);
         miliseconds = miliseconds != "" ? parseInt(miliseconds) : 0;
-        return minutes * 60000 + seconds * 1000 + miliseconds;
+        return minutes * 60 + seconds + (miliseconds/1000);
       } else {
         return 0;
       }
@@ -178,8 +178,8 @@ export default {
       if (timeInt > 0) {
         let result = 0;
         let temptime = timeInt;
-        let miliseconds = temptime % 1000;
-        temptime = Math.floor(temptime / 1000);
+        let miliseconds = Math.floor((temptime % 1)*1000);
+        temptime = Math.floor(temptime);
         let seconds = temptime % 60;
         temptime = Math.floor(temptime / 60);
         let minutes = Math.floor(temptime / 60);

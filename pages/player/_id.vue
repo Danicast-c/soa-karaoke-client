@@ -1,6 +1,7 @@
 <template>
 <div>
-    <link href='https://fonts.googleapis.com/css?family=Sriracha' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Sriracha' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet'>
 
     <v-row justify="center" align="center">
 
@@ -43,7 +44,7 @@
     background-color: #1b2e41;
     min-height: 300px;
     /* background: #090000; */
-    /* font-size: calc(1em + 3vmax); */
+    font-size: calc(1em + 3vmax);
     line-height: 1.1;
     text-align: center;
     display: grid;
@@ -53,7 +54,7 @@
 }
 
 x-sign {
-    --interval: 1s;
+    --interval: 0.5s;
     display: block;
     text-shadow:
         0 0 10px var(--color1),
@@ -63,13 +64,14 @@ x-sign {
     will-change: filter, color;
     filter: saturate(60%);
     animation: flicker steps(100) var(--interval) 1s infinite;
-    font-size: 30px;
+    /* font-size: 30px; */
     color: lightyellow;
     --color1: yellow;
     --color2: gold;
     --color3: orange;
     --color4: darkred;
-    font-family: Sriracha;
+    font-family: Bad Script;
+    /* font-family: Sriracha; */
 }
 
 @keyframes flicker {
