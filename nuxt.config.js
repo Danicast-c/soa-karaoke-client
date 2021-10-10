@@ -84,8 +84,8 @@ export default {
 
     axios: {
         // baseURL: 'http://q.josvar.com:3000'
-        // baseURL: 'https://api.karaoke.josvar.com/'
-        baseURL: 'http://localhost:3000'
+        baseURL: 'https://api.karaoke.josvar.com/'
+        // baseURL: 'http://localhost:3000'
 
     },
 
