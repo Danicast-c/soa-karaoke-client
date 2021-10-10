@@ -101,7 +101,7 @@
 }
 
 .plyr--audio .plyr__controls {
-    background-color: #090000;
+    background-color: #090000 !important;
 }
 
 @keyframes flicker {
