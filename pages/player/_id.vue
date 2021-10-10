@@ -2,8 +2,7 @@
 <div>
     <link href='https://fonts.googleapis.com/css?family=Sriracha' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" />
-
-    <div class="karaoke_banner_section" id="karaoke_banner_div">
+    <div class="karaoke_banner_section" id="karaoke_banner_div" @dblclick="toggleFullScreen()" >
         <div class="song_title">
             <h1>
                 {{ data.title }}
@@ -13,7 +12,7 @@
             </h3>
         </div>
 
-        <div class="karaoke_banner" @dblclick="toggleFullScreen()">
+        <div class="karaoke_banner" >
             <div class="neon-sign" v-html="lyrics"></div>
         </div>
 
@@ -39,6 +38,8 @@
 .song_title {
     margin-left: 1rem;
     margin-top: 1rem;
+    font-size: 3vmin;
+
 }
 
 .song_title h1 {
@@ -68,7 +69,7 @@
 }
 
 .karaoke_banner {
-    margin: 0rem;
+    margin: 2rem;
     min-height: 50vh;
     background: #090000;
     font-size: 10vmin;
@@ -76,7 +77,7 @@
     display: grid;
     align-content: center;
     justify-content: center;
-    height: 75%;
+    height: 70%;
 }
 
 .karaoke_player {
