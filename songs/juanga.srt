@@ -1,0 +1,177 @@
+{
+    "id": "614a9fb4d54c98000b5b7270",
+    "title": "Have you ever seen the rain",
+    "artist": "Juan Gabriel",
+    "album": "Gracias al Sol",
+    "mp3": "https://www.youtube.com/watch?v=tqnfoRXKgLs",
+    "lyrics": [
+        {
+            "id": 1,
+            "startTime": 1,
+            "endTime": 14.766,
+            "text": "♪ ♪"
+        },
+        {
+            "id": 2,
+            "startTime": 15,
+            "endTime": 18.1,
+            "text": "♪ CUANDO VEO SALIR EL SOL ♪"
+        },
+        {
+            "id": 3,
+            "startTime": 19.166,
+            "endTime": 23.366,
+            "text": "♪ COMO EL QUE HA<br />SALIDO HOY MI YO, ♪"
+        },
+        {
+            "id": 4,
+            "startTime": 24.6,
+            "endTime": 27.666,
+            "text": "♪ SIENTE MUCHA ALEGRIA, ♪"
+        },
+        {
+            "id": 5,
+            "startTime": 28,
+            "endTime": 31.433,
+            "text": "♪ ♪"
+        },
+        {
+            "id": 6,
+            "startTime": 31.466,
+            "endTime": 34.6,
+            "text": "♪ NO HAY TRISTEZA,<br />NO HAY DOLOR ♪"
+        },
+        {
+            "id": 7,
+            "startTime": 35.633,
+            "endTime": 38.566,
+            "text": "♪ NADA EXTRAÑO SIENTO YO ♪"
+        },
+        {
+            "id": 8,
+            "startTime": 38.6,
+            "endTime": 45.033,
+            "text": "♪ SINO, QUE SERIA<br />DE MI VIDA? ♪"
+        },
+        {
+            "id": 9,
+            "startTime": 45.066,
+            "endTime": 48.7,
+            "text": "♪ ♪"
+        },
+        {
+            "id": 10,
+            "startTime": 48.733,
+            "endTime": 54.5,
+            "text": "♪ AHORA NO, NO HA<br />LLOVIDO EL DIA DE HOY ♪"
+        },
+        {
+            "id": 11,
+            "startTime": 57.1,
+            "endTime": 63.2,
+            "text": "♪ Y AHORA NO, NO HACE<br />FRIO NI HAY CALOR ♪"
+        },
+        {
+            "id": 12,
+            "startTime": 63.566,
+            "endTime": 69.533,
+            "text": "♪ HAY MUY BUEN TIEMPO<br />GRACIAS AL SOL, ♪"
+        },
+        {
+            "id": 13,
+            "startTime": 69.566,
+            "endTime": 73.266,
+            "text": "♪ ♪"
+        },
+        {
+            "id": 14,
+            "startTime": 73.3,
+            "endTime": 76.666,
+            "text": "♪ CUANDO LLUEVE<br />NO HAY COLOR ♪"
+        },
+        {
+            "id": 15,
+            "startTime": 77.366,
+            "endTime": 80.466,
+            "text": "♪ LLUEVE BELLO PERO YO ♪"
+        },
+        {
+            "id": 16,
+            "startTime": 80.5,
+            "endTime": 86.633,
+            "text": "♪ YO ESTOY, TRISTE<br />Y NO VEO ALEGRIA, ♪"
+        },
+        {
+            "id": 17,
+            "startTime": 86.666,
+            "endTime": 89.766,
+            "text": "♪ ♪"
+        },
+        {
+            "id": 18,
+            "startTime": 90,
+            "endTime": 93.2,
+            "text": "♪ CUANDO HAY SOL<br />HAY MUCHA FLOR ♪"
+        },
+        {
+            "id": 19,
+            "startTime": 94.3,
+            "endTime": 98.4,
+            "text": "♪ Y EL GERANIO ES<br />COMO YO Y T AMOR ♪"
+        },
+        {
+            "id": 20,
+            "startTime": 99.766,
+            "endTime": 103.266,
+            "text": "♪ COMO LAS BUGAMBILIAS, ♪"
+        },
+        {
+            "id": 21,
+            "startTime": 103.3,
+            "endTime": 107.166,
+            "text": "♪ ♪"
+        },
+        {
+            "id": 22,
+            "startTime": 107.2,
+            "endTime": 112.733,
+            "text": "♪ AHORA NO, NO HA<br />LLOVIDO EL DIA DE HOY ♪"
+        },
+        {
+            "id": 23,
+            "startTime": 115.333,
+            "endTime": 121.766,
+            "text": "♪ Y AHORA NO, NO HACE<br />FRIO NI HACE CALOR ♪"
+        },
+        {
+            "id": 24,
+            "startTime": 123.766,
+            "endTime": 127.733,
+            "text": "♪ HACE BUEN TIEMPO,<br />GRACIAS AL SOL, ♪"
+        },
+        {
+            "id": 25,
+            "startTime": 132.133,
+            "endTime": 138.4,
+            "text": "♪ AHORA NO, NO HA<br />LLOVIDO EL DIA DE HOY ♪"
+        },
+        {
+            "id": 26,
+            "startTime": 140.466,
+            "endTime": 146.533,
+            "text": "♪ Y AHORA NO, NO HACE<br />FRIO NI HACE CALOR ♪"
+        },
+        {
+            "id": 27,
+            "startTime": 148.733,
+            "endTime": 153.3,
+            "text": "♪ HACE BUEN TIEMPO<br />GRACIAS AL SOL. ♪"
+        },
+        {
+            "id": 28,
+            "startTime": 153.333,
+            "endTime": 161.2,
+            "text": "♪ ♪"
+        }
+    ]
+}

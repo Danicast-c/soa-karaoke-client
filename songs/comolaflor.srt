@@ -1,0 +1,148 @@
+{
+    "id": "614a9fd265f6ba000bc7e79f",
+    "title": "Como la Flor",
+    "artist": "Selena Quintanilla",
+    "album": "La Flor",
+    "mp3": "https://www.mboxdrive.com/selena-como-la-flor-version-karaoke.mp3",
+    "lyrics": [
+        {
+            "id": 1,
+            "startTime": 17.168,
+            "endTime": 17.217,
+            "text": "Yo sé que tienes un nuevo amor"
+        },
+        {
+            "id": 2,
+            "startTime": 22.299,
+            "endTime": 22.357,
+            "text": "Sin embargo, te deseo lo mejor"
+        },
+        {
+            "id": 3,
+            "startTime": 27.698,
+            "endTime": 27.742,
+            "text": "Si en mí encontraste felicidad"
+        },
+        {
+            "id": 4,
+            "startTime": 33.03,
+            "endTime": 33.085,
+            "text": "Tal vez, alguien más te la dará"
+        },
+        {
+            "id": 5,
+            "startTime": 37.778,
+            "endTime": 37.834,
+            "text": "Como la flor con tanto amor"
+        },
+        { "id": 6, "startTime": 43, "endTime": 43.067, "text": "Me diste tú, se marchitó" },
+        {
+            "id": 7,
+            "startTime": 48.14,
+            "endTime": 48.219,
+            "text": "Me marcho hoy, yo sé perder"
+        },
+        {
+            "id": 8,
+            "startTime": 53.722,
+            "endTime": 53.809,
+            "text": "Pero, ah-ah-ay, ¡cómo me duele!"
+        },
+        {
+            "id": 9,
+            "startTime": 59.617,
+            "endTime": 59.704,
+            "text": "Ah-ah-ay, ¡cómo me duele!"
+        },
+        {
+            "id": 10,
+            "startTime": 80.442,
+            "endTime": 80.518,
+            "text": "Si vieras cómo duele perder tu amor"
+        },
+        {
+            "id": 11,
+            "startTime": 85.751,
+            "endTime": 85.873,
+            "text": "Con tu adiós te llevas mi corazón"
+        },
+        {
+            "id": 12,
+            "startTime": 90.949,
+            "endTime": 91.048,
+            "text": "No sé si pueda volver a amar"
+        },
+        {
+            "id": 13,
+            "startTime": 96.023,
+            "endTime": 96.121,
+            "text": "Porque te di todo el amor que pude dar"
+        },
+        {
+            "id": 14,
+            "startTime": 100.974,
+            "endTime": 101.073,
+            "text": "Como la flor con tanto amor"
+        },
+        {
+            "id": 15,
+            "startTime": 106.274,
+            "endTime": 106.385,
+            "text": "Me diste tú, se marchitó"
+        },
+        {
+            "id": 16,
+            "startTime": 111.493,
+            "endTime": 111.592,
+            "text": "Me marcho hoy, yo sé perder"
+        },
+        {
+            "id": 17,
+            "startTime": 116.883,
+            "endTime": 117.002,
+            "text": "Pero, ah-ah-ay, ¡cómo me duele!"
+        },
+        {
+            "id": 18,
+            "startTime": 122.879,
+            "endTime": 122.967,
+            "text": "Ah-ah-ay, ¡cómo me duele!"
+        },
+        {
+            "id": 19,
+            "startTime": 135.174,
+            "endTime": 135.25,
+            "text": "Como la flor con tanto amor"
+        },
+        {
+            "id": 20,
+            "startTime": 140.338,
+            "endTime": 140.448,
+            "text": "Me diste tú, se marchitó"
+        },
+        {
+            "id": 21,
+            "startTime": 145.763,
+            "endTime": 145.893,
+            "text": "Me marcho hoy, yo sé perder"
+        },
+        {
+            "id": 22,
+            "startTime": 151.185,
+            "endTime": 151.272,
+            "text": "Pero, ah-ah-ay, ¡cómo me duele!"
+        },
+        {
+            "id": 23,
+            "startTime": 157.08,
+            "endTime": 157.178,
+            "text": "Ah-ah-ay, ¡cómo me duele!"
+        },
+        {
+            "id": 24,
+            "startTime": 162.536,
+            "endTime": 162.623,
+            "text": "Ah-ah-ay, ¡cómo me duele!"
+        }
+    ]
+}
