@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card id="main_card">
     <!-- <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
       <v-card class="logo py-4 d-flex justify-center">
@@ -7,7 +7,8 @@
       </v-card> -->
     <!-- tabla -->
     <v-card-title>
-      Song
+      <h1>Song</h1>
+      
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
@@ -31,15 +32,15 @@
 
       <template v-slot:item.play="{ item }">
         <v-btn-toggle>
-          <v-btn variant="primary" @click="playSong(item)">
+          <v-btn color="success"  @click="playSong(item)">
             <v-icon>mdi-play</v-icon>
           </v-btn>
         </v-btn-toggle>
       </template>
 
-      <template v-slot:item.actions="{ item }">
+      <template v-slot:item.actions="{ item }" >
         <v-btn-toggle>
-          <v-btn variant="primary" @click="editSong(item)">
+          <v-btn @click="editSong(item)">
             <v-icon>mdi-pencil</v-icon>
           </v-btn>
         </v-btn-toggle>
@@ -85,6 +86,14 @@
     <!-- </div> -->
   </v-card>
 </template>
+
+<style>
+ th, td {
+  padding-top: 10px !important;
+  padding-bottom: 10px!important;
+  font-size: 3vmin !important;
+}
+</style>
 
 <script>
 export default {
@@ -135,6 +144,7 @@ export default {
       let response = await this.$axios.$get("/songs");
       this.songs = response;
       this.loadingVar = false;
+      console.log('$route.name', this.$router)
     },
 
     // songClick(row) {
