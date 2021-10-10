@@ -4,7 +4,7 @@
       <h1>New song</h1>
       <v-text-field v-model="song.title" label="Song Name"></v-text-field>
       <v-text-field v-model="song.artist" label="Artist Name"></v-text-field>
-      <v-text-field v-model="song.album" label="Song Name"></v-text-field>
+      <v-text-field v-model="song.album" label="Album Name"></v-text-field>
       <v-file-input
         show-size
         chips
