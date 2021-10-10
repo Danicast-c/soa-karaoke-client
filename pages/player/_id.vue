@@ -1,69 +1,75 @@
 <template>
 <div>
-    <!-- <link href='https://fonts.googleapis.com/css?family=Sriracha' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Sriracha' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" />
 
-    <!-- <v-row justify="center" align="center"> -->
+    <div class="karaoke_banner_section" id="karaoke_banner_div">
+        <div class="song_title">
+            <h1>
+                {{ data.title }}
+            </h1>
+            <h3>
+                {{ data.artist }}
+            </h3>
+        </div>
 
-    <v-card class="karaoke_banner_section" id="karaoke_banner_div">
-        <!-- <v-col cols="12" sm="8" md="6"> -->
-        <v-card class="logo py-4 d-flex justify-center hover">
-            <v-card-title>
-                <h1>{{ data.title }}</h1>
-            </v-card-title>
-
-            <h2>{{ data.artist }}</h2>
-        </v-card>
-        <!-- Music Player -->
-
-        <div class="karaoke_banner">
+        <div class="karaoke_banner" @dblclick="toggleFullScreen()">
             <div class="neon-sign" v-html="lyrics"></div>
         </div>
 
-        <!-- <div class="jumbotron">
-                <x-sign>PRUEBA gfhfghfghfghfghfgfghfghfgh fggh sdfsdfsdf sdfsdfsd sdfsdf</x-sign>
-            </div> -->
-
         <tr>
             <th class="karaoke_player">
-                <vue-plyr ref="plyr">
+                <vue-plyr ref="plyr" class="karaoke_player">
                     <audio controls crossorigin playsinline>
                         <source src="mp3" type="audio/mp3" />
                     </audio>
                 </vue-plyr>
             </th>
             <th>
-                <v-btn @click="toggleFullScreen()" large light style="height:50px">
+                <v-btn @click="toggleFullScreen()" large dark style="background-color: #090000;">
                     <v-icon style="height:100%"> mdi-fullscreen</v-icon>
                 </v-btn>
-
             </th>
         </tr>
-
-        <h3>
-            Current time: {{ currentTime }} / Lyrics index: {{ lyrics_index }} /
-            {{ lyrics_max_index }}
-        </h3>
-    </v-card>
-    <!-- </v-col> -->
-
-    <!-- </v-row> -->
+    </div>
 </div>
 </template>
 
 <style>
+.song_title {
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.song_title h1 {
+    font-size: 5vmin;
+    --interval: 1s;
+    display: block;
+    text-shadow:
+        0 0 10px var(--color1),
+        0 0 20px var(--color2),
+        0 0 40px var(--color3),
+        0 0 80px var(--color4);
+    will-change: filter, color;
+    filter: saturate(60%);
+    animation: flicker steps(100) var(--interval) 1s infinite;
+    color: azure;
+    --color1: azure;
+    --color2: aqua;
+    --color3: dodgerblue;
+    --color4: blue;
+    font-family: Sriracha;
+}
+
 .karaoke_banner_section {
-    height: 75%;
-    /* display: grid; */
-    min-height: 500px;
+    margin: 1rem;
+    background-color: #090000;
 
 }
 
 .karaoke_banner {
-    padding: 1rem;
-    margin: 2rem;
-    /* background-color: #1b2e41; */
-    min-height: 400px;
+    margin: 0rem;
+    min-height: 50vh;
     background: #090000;
     font-size: 10vmin;
     text-align: center;
@@ -71,14 +77,11 @@
     align-content: center;
     justify-content: center;
     height: 75%;
-    padding: 1em;
 }
 
 .karaoke_player {
     width: 100%;
 }
-
-
 
 .neon-sign {
     --interval: 0.5s;
@@ -88,14 +91,16 @@
     will-change: filter, color;
     filter: saturate(60%);
     animation: flicker steps(100) var(--interval) 1s infinite;
-    /* font-size: 30px; */
     color: lightyellow;
     --color1: yellow;
     --color2: gold;
     --color3: orange;
     --color4: darkred;
     font-family: Bad Script;
-    /* font-family: Sriracha; */
+}
+
+.plyr--audio .plyr__controls {
+    background-color: #090000;
 }
 
 @keyframes flicker {
