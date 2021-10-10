@@ -20,6 +20,7 @@
     </v-card-title>
 
     <v-data-table
+     hover
       :headers="filteredHeaders"
       :items="songs"
       :items-per-page="100"

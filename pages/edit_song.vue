@@ -4,8 +4,7 @@
   </p>
   <p v-else-if="$fetchState.error">Error while fetching song 🤬</p>
   <div v-else>
-
-    <audio src="https://storage.googleapis.com/soa-karaoke-canciones/09b2f3a7-7602-4f96-0846-f74292deb147"></audio>
+<v-container>
     <form @submit.prevent="submit">
       <h1>Edit song</h1>
       <v-text-field v-model="song.title" label="Song Name"></v-text-field>
@@ -14,6 +13,8 @@
       <LyricsLines :lines="this.song.lyrics" />
       <v-btn class="mr-4" type="submit"> submit </v-btn>
     </form>
+</v-container>
+
 
 
 
