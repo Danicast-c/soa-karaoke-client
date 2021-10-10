@@ -141,15 +141,19 @@ export default {
     },
     addLine: function () {
       let new_index = 0;
+      let new_start_time = 0;
 
       if (this.lines.length > 0) {
-        new_index = Math.max(...this.lines.map((x) => x["index"])) + 1;
+        let last_index=Math.max(...this.lines.map((x) => x["index"]));
+        new_index =  last_index + 1;
+        new_start_time = this.lines.filter((item) => item.index == last_index)[0].endTime;
       }
+      let new_end_time = new_start_time+5;
       this.lines.push({
-        startTime: 0,
-        endTime: 5.000,
-        start_s: "00:00.000",
-        end_s: "00:05.000",
+        startTime: new_start_time,
+        endTime: new_end_time,
+        start_s: this.intToTimeString(new_start_time),
+        end_s: this.intToTimeString(new_end_time),
         text: "",
         index: new_index,
       });
