@@ -15,9 +15,8 @@ Otra área en la que Node se ha vuelto muy popular en los últimos años es para
 
 Debido a estos beneficios y la familiaridad de los desarrolladores de este proyecto con Node, se eligió esta tecnología para la creación de tanto el back-end como del front-end.
 
-#### Vue - JavaScript
 ### Frameworks / Toolkits
-#### Nuxt JS
+#### Front-end: Nuxt JS
 Como se discutió en la sección anterior, existen muchos frameworks para el desarrollo de interfaces web. Según el informe [State of JS del año 2020](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/), los frameworks más populares son React, Angular, y Vue.js. Todos son increíblemente populares en la industria y cumplen su función de acelerar el desarrollo de front-ends.
 
 Para este proyecto, se decidió utitizar el framework de interfaz Vue.js, debido a su facilidad de uso (en comparación con React, el cual tiene una curva de aprendizaje muy grande) y mayor flexibilidad (en comparación con Angular). Además, los desarrolladores de este proyecto tenían familiaridad con el framework, lo que ayudó a la elección.
@@ -28,7 +27,7 @@ Para complementar Vue, se utilizó un framework llamado Nuxt.js. Este framework 
 Usando Nuxt.js y Vue.js, se programó toda la interfaz, la cual cuenta con pantallas iniciales de registro e inicio de sesión. Se tiene un menú principal donde se encuentran la lista de canciones para reproducir, a través de la cual es posible acceder a la vista para editar canciones, incluir nuevas o eliminarlas.
 
 
-### Backend: Nest JS
+#### Back-end: Nest JS
 Para el back-end, Node igualmente ofrece variedad de frameworks listos para usar. Desde iniciar solo con Express, sobre el cual se puede montar manualmente todo lo que necesite nuestro servidor, hasta usar bibliotecas más completas, que traen todo lo necesario para empezar (batteries included), como lo son FeathersJS, NestJS, entre otras. Analizando las diferentes opciones, se decidió usar NestJS por que se determinó que era la biblioteca más completa, tanto en términos de características como de documentación, además de una gran cantidad de plug-ins creados por la comunidad. 
 
 Una característica interesante de NestJS es que adopta la rigidez de Angular respecto a módulos, servicios y componentes, lo cual al inicio es raro para un proyecto de back-end y aumenta la curva de aprendizaje al tener que adaptarse al estilo de programación que impone el framework, sin embargo, a medida que progresa el desarrollo, se van viendo los beneficios que da esta arquitectura, ya que separa muy bien cada módulo de la aplicación, eliminando dependencias entre ellos, lo cual puede facilitar en el futuro separar cada módulo en un microservicio totalmente aparte.
