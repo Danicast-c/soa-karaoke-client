@@ -16,17 +16,17 @@ Karaoke 99 es una plataforma de Karaoke que permite a los usuarios registrarse y
 
 
 
-#### Nivel 2: 
+#### Nivel 2: Contenedores
 <p align="center">
 <img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level2.puml"  />
 </p>
 
-#### Nivel 3: 
+#### Nivel 3: Componentes
 <p align="center">
 <img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level3.puml" />
 </p>
 
-#### Nivel 4: 
+#### Nivel 4: C
 
 <p align="center">
 <img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level4.puml"  />
