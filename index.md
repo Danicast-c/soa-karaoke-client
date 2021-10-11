@@ -11,25 +11,25 @@ Karaoke 99 es una plataforma de Karaoke que permite a los usuarios registrarse y
 
 #### Nivel 1: Contexto
 <p align="center">
-<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level1.puml" height="600" />
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level1.puml"  />
 </p>
 
 
 
 #### Nivel 2: 
 <p align="center">
-<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level2.puml" height="600" />
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level2.puml"  />
 </p>
 
 #### Nivel 3: 
 <p align="center">
-<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level3.puml" height="600" />
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level3.puml" />
 </p>
 
 #### Nivel 4: 
 
 <p align="center">
-<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level4.puml" height="600" />
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level4.puml"  />
 </p>
 
 
