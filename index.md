@@ -62,9 +62,11 @@ Una característica interesante de NestJS es que adopta la rigidez de Angular re
 
 Otro beneficio provisto por MongoDB es compatibilidad con la biblioteca TypeORM, un ORM (Object-Relational mapping) para TypeScript, que permite manejar fácilmente los datos en la base de datos como objetos nativos de TypeScript, haciendo la asignación de atributos tan fácil como cambiar una variable de un objeto.
 
-### Estandares de Programación
-### Organización de los proyectos de código.
+<!-- ### Estandares de Programación -->
 
+
+### Organización de los proyectos de código.
+Ambos proyectos fueron desarrollados en repositorios independientes, integrando cada uno al servidor de Jenkins. Permitiendo llevar a cabo el proceso de continuous integration, validadndo las diferentes pruebas unitarias así como el analisis del código mediante SonarCloud, y el de continuous delivery, al automatizar el proceso de deploy de ambos sistemas en contenedores de docker para su ejecucion en la platadorma Google Cloud.
 
 
 
