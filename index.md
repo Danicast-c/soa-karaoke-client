@@ -5,8 +5,33 @@ Karaoke 99 es una plataforma de Karaoke que permite a los usuarios registrarse y
 
 ## Diseño e Implementación
 ### Diagramas C4
+<!-- #### Nivel 1: Contexto -->
+<!-- ![lvl1](https://user-images.githubusercontent.com/18470228/136119457-d01267fc-454d-4763-a263-62b07d8865b0.png) -->
+
+
 #### Nivel 1: Contexto
-![lvl1](https://user-images.githubusercontent.com/18470228/136119457-d01267fc-454d-4763-a263-62b07d8865b0.png)
+<p align="center">
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level1.puml" height="600" />
+</p>
+
+
+
+#### Nivel 2: 
+<p align="center">
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level2.puml" height="600" />
+</p>
+
+#### Nivel 3: 
+<p align="center">
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level3.puml" height="600" />
+</p>
+
+#### Nivel 4: 
+
+<p align="center">
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Danicast-c/soa-karaoke-client/gh-pages/c4/level4.puml" height="600" />
+</p>
+
 
 ### Lenguajes de Programación
 Para la creación de REST APIs y web apps existen diferentes lenguajes populares que pueden usarse. Por ejemplo, está PHP, JavaScript (con Node), Ruby, Python, las cuales son todas opciones válidas para la resolución de este proyecto. Sin embargo, de entre todas estas destaca especialmente Node.js, el runtime de JavaScript para el servidor que ha explotado en popularidad en la última década, principlamente por la fácilidad de programar en él y la portabilidad, siendo muy fácil correr un proyecto de Node en una máquina nueva.
