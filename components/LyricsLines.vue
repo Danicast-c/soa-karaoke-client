@@ -1,6 +1,6 @@
 <template>
 <v-container>
-    <v-data-table striped hover dark :items="lines" :headers="fields" :items-per-page="1000" :sort-by="start_s">
+    <v-data-table striped hover dark :items="lines" :headers="fields" :items-per-page="1000" :sort-by="startTime" >
         <template v-slot:[`item.text`]="{ value, item }">
             <template v-if="edit != item.index">{{ value }}</template>
             <v-text-field v-else v-model="edit_line.text" :rules="[() => !!edit_line.text || 'This field is required']" />
@@ -95,6 +95,8 @@ export default {
         this.lines.forEach((arrayItem, index, fullArray) =>
             (arrayItem["index"] = index)
         );
+        this.lines.sort(function(a, b) {
+            return a["startTime"] - b["startTime"] });
     },
     //props: ["submitForm", "buttonText", "hasName"]
     props: {
@@ -122,6 +124,8 @@ export default {
                     current_line.endTime = this.timeStringToInt(this.edit_line.end_s);
                     current_line.text = this.edit_line.text;
                     this.edit = null;
+                    this.lines.sort(function(a, b) {
+                    return a["startTime"] - b["startTime"] });
                 }
             } else {
                 //nuevo
@@ -181,7 +185,7 @@ export default {
                 temptime = Math.floor(temptime);
                 let seconds = temptime % 60;
                 temptime = Math.floor(temptime / 60);
-                let minutes = Math.floor(temptime / 60);
+                let minutes = Math.floor(temptime % 60);
                 return (
                     minutes.toString().padStart(2, "0") +
                     ":" +
