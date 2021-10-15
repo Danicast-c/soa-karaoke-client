@@ -29,7 +29,9 @@ pipeline {
         //   }
         // }
         stage('SonarCloud') {
-          echo 'Sent to SonarCloud for analysis'
+          steps {
+            echo 'Sent to SonarCloud for analysis'
+          }
         }
       }
     }
