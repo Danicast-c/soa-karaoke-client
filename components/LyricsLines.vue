@@ -134,6 +134,8 @@ export default {
                 this.edit_line.end_s = current_line.end_s;
                 this.edit_line.text = current_line.text;
                 this.edit = index;
+                this.lines.sort(function(a, b) {
+                    return a["startTime"] - b["startTime"] });
             }
 
             // this.edit = this.edit !== index ? index : null;
@@ -157,6 +159,8 @@ export default {
                 index: new_index,
             });
             this.onEdit(new_index);
+            this.lines.sort(function(a, b) {
+                    return a["startTime"] - b["startTime"] });
             // this.edit = new_index;
         },
         deleteTableRow: function (item) {
