@@ -37,7 +37,7 @@
 
         
     </v-data-table>
-    <v-btn variant="success" @click="addLine()"> Add line </v-btn>
+    <v-btn variant="success" @click="addLine()" :disabled="edit!=null"> Add line </v-btn>
 </v-container>
 </template>
 
