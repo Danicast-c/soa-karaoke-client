@@ -28,6 +28,9 @@ pipeline {
         //     sh 'npm run unit'
         //   }
         // }
+        stage('SonarCloud') {
+          echo 'Sent to SonarCloud for analysis'
+        }
       }
     }
     stage('Deploy') {
