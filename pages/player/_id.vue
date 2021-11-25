@@ -35,44 +35,43 @@
     <div class="mx-4 my-4">
         <h3> Artist Information: </h3>
     </div>
-    <v-card class="mx-4 my-4"> 
-
-        <!-- <v-card-title>Artist Information</v-card-title> -->
-        
-        <v-card-text>
-            <h1>{{ data.artist }}</h1>
-        </v-card-text>
-        <v-card-actions>
-            <v-btn
-            color="orange lighten-2"
-            text
-            >
-            Show Artist Bio
-            </v-btn>
     
-            <v-spacer></v-spacer>
-    
-            <v-btn
-            icon
-            @click="show = !show"
-            >
-            <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-            </v-btn>
-        </v-card-actions>
-
-        <v-expand-transition>
-            <div v-show="show">
-            <v-divider></v-divider>
-    
-            <v-card-text class="bio_text">
-                {{ info.summary }}
-            </v-card-text>
+    <v-row>
+        <v-col cols="10">
+            <v-card class="mx-4 my-2"> 
+                <!-- <v-card-title>Artist Information</v-card-title> -->
+                <div>
+                    <v-card-text>
+                        <h1>{{ data.artist }}</h1>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-btn color="orange lighten-2" text >
+                        Show Artist Bio
+                        </v-btn>
+                        <v-btn icon @click="show = !show" >
+                            <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                        </v-btn>
+                    </v-card-actions>
+                </div>
+            
+                <v-expand-transition>
+                    <div v-show="show">
+                        <v-divider></v-divider>
+                        <v-card-text class="bio_text">
+                            {{ info.summary }}
+                        </v-card-text>
+                    </div>
+                </v-expand-transition>
+            </v-card>   
+    </v-col>
+        <v-col>
+            <div>
+                <v-avatar class="ma-3" size="125" tile >
+                    <v-img :src="photo"></v-img>
+                </v-avatar>
             </div>
-        </v-expand-transition>
-
-
-
-    </v-card>   
+        </v-col>
+    </v-row>
 
 </div>
 </template>
@@ -173,7 +172,7 @@ export default {
             lyrics: "",
             currentTime: -1,
             info: "Hola",
-            photo: "https://lastfm.freetls.fastly.net/i/u/34s/2b03aa5e2baae31cfa94422fca09f5a2.png",
+            photo: "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
             show: false,
         };
     },
@@ -205,6 +204,12 @@ export default {
                 else {
                     console.log(data)
                     this.track = data;
+                    if (data.images == undefined){
+                        this.photo = "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+                    } else {
+                        this.photo = data.images[3]
+                    }
+
                 }
             })
         },
