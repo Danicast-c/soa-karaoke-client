@@ -31,10 +31,57 @@
             </th>
         </tr>
     </div>
+
+    <div class="mx-4 my-4">
+        <h3> Artist Information: </h3>
+    </div>
+    <v-card class="mx-4 my-4"> 
+
+        <!-- <v-card-title>Artist Information</v-card-title> -->
+        
+        <v-card-text>
+            <h1>{{ data.artist }}</h1>
+        </v-card-text>
+        <v-card-actions>
+            <v-btn
+            color="orange lighten-2"
+            text
+            >
+            Show Artist Bio
+            </v-btn>
+    
+            <v-spacer></v-spacer>
+    
+            <v-btn
+            icon
+            @click="show = !show"
+            >
+            <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+            </v-btn>
+        </v-card-actions>
+
+        <v-expand-transition>
+            <div v-show="show">
+            <v-divider></v-divider>
+    
+            <v-card-text class="bio_text">
+                {{ info.summary }}
+            </v-card-text>
+            </div>
+        </v-expand-transition>
+
+
+
+    </v-card>   
+
 </div>
 </template>
 
 <style>
+.bio_text {
+    text-align: justify;
+    text-justify: inter-word;
+}
 .song_title {
     margin-left: 1rem;
     margin-top: 1rem;
@@ -118,16 +165,21 @@ export default {
         return {
             id: this.$route.params.id,
             data: "",
+            track: "",
             loadingVar: true,
             mp3: "",
             lyrics_index: 0,
             lyrics_max_index: 0,
             lyrics: "",
             currentTime: -1,
+            info: "Hola",
+            photo: "https://lastfm.freetls.fastly.net/i/u/34s/2b03aa5e2baae31cfa94422fca09f5a2.png",
+            show: false,
         };
     },
     mounted() {
         this.getSong();
+        // this.getInfo();
         this.$refs.plyr.player.on(
             "timeupdate",
             () => (this.currentTime = this.$refs.plyr.player.currentTime)
@@ -135,6 +187,27 @@ export default {
         this.$refs.plyr.player.on("timeupdate", () => this.updateLyrics());
     },
     methods: {
+        getInfo: async function () {
+            const LastFM = require('last-fm')
+            const lastfm = new LastFM('4ba65128ba8dba89aa096b5619e184f3', { userAgent: 'MyApp/1.0.0 (http://example.com)' })
+            lastfm.artistInfo({ name: this.data.artist }, (err, data) => {
+                if (err) console.error(err)
+                else {
+                    console.log(data)
+                    this.info = data;
+                    if (this.info.summary == "") {
+                        this.info.summary = "No info available";
+                    }
+                }
+            })
+            lastfm.trackInfo({ name: this.data.title, artistName: this.data.artist }, (err, data) => {
+                if (err) console.error(err)
+                else {
+                    console.log(data)
+                    this.track = data;
+                }
+            })
+        },
         getSong: async function () {
             let response = await this.$axios.$get("/songs/" + this.id);
             this.data = response;
@@ -142,6 +215,8 @@ export default {
             this.lyrics_max_index = response.lyrics.length - 1;
             this.updateSong();
             this.loadingVar = false;
+
+            this.getInfo()
         },
         updateSong() {
             let player = this.$refs.plyr.player;
