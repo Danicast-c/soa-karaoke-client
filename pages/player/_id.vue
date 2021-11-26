@@ -66,10 +66,56 @@
       </tr>
     </div>
 
-  </div>
+
+    <div class="mx-4 my-4">
+        <h3> Artist Information: </h3>
+    </div>
+    
+    <v-row>
+        <v-col cols="10">
+            <v-card class="mx-4 my-2"> 
+                <!-- <v-card-title>Artist Information</v-card-title> -->
+                <div>
+                    <v-card-text>
+                        <h1>{{ data.artist }}</h1>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-btn color="orange lighten-2" text >
+                        Show Artist Bio
+                        </v-btn>
+                        <v-btn icon @click="show = !show" >
+                            <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                        </v-btn>
+                    </v-card-actions>
+                </div>
+            
+                <v-expand-transition>
+                    <div v-show="show">
+                        <v-divider></v-divider>
+                        <v-card-text class="bio_text">
+                            {{ info.summary }}
+                        </v-card-text>
+                    </div>
+                </v-expand-transition>
+            </v-card>   
+    </v-col>
+        <v-col>
+            <div>
+                <v-avatar class="ma-3" size="125" tile >
+                    <v-img :src="photo"></v-img>
+                </v-avatar>
+            </div>
+        </v-col>
+    </v-row>
+
+</div>
 </template>
 
 <style>
+.bio_text {
+    text-align: justify;
+    text-justify: inter-word;
+}
 .song_title {
   margin-left: 1rem;
   margin-top: 1rem;
@@ -176,7 +222,10 @@ export default {
       recognitionRunning: false,
       scoreReady: false,
       starSizes: [],
-      finalScore: 0
+      finalScore: 0,
+      info: "Hola",
+            photo: "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+            show: false,
     };
   },
   mounted() {
@@ -270,6 +319,33 @@ export default {
       var percentage = ((max - distance) / max) * 100;
       return percentage;
     },
+    getInfo: async function () {
+            const LastFM = require('last-fm')
+            const lastfm = new LastFM('4ba65128ba8dba89aa096b5619e184f3', { userAgent: 'MyApp/1.0.0 (http://example.com)' })
+            lastfm.artistInfo({ name: this.data.artist }, (err, data) => {
+                if (err) console.error(err)
+                else {
+                    console.log(data)
+                    this.info = data;
+                    if (this.info.summary == "") {
+                        this.info.summary = "No info available";
+                    }
+                }
+            })
+            lastfm.trackInfo({ name: this.data.title, artistName: this.data.artist }, (err, data) => {
+                if (err) console.error(err)
+                else {
+                    console.log(data)
+                    this.track = data;
+                    if (data.images == undefined){
+                        this.photo = "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+                    } else {
+                        this.photo = data.images[3]
+                    }
+
+                }
+            })
+        },
 
     getSong: async function() {
       let response = await this.$axios.$get("/songs/" + this.id);
@@ -278,6 +354,7 @@ export default {
       this.lyrics_max_index = response.lyrics.length - 1;
       this.updateSong();
       this.loadingVar = false;
+      this.getInfo()
     },
     updateSong() {
       let player = this.$refs.plyr.player;
