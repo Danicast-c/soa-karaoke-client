@@ -12,12 +12,14 @@
     "dependencies": {
         "@nuxtjs/auth-next": "5.0.0-1624817847.21691f1",
         "@nuxtjs/axios": "^5.13.6",
+        "chart.js": "^2.7.1",
         "core-js": "^3.15.1",
         "last-fm": "^5.3.0",
         "nuxt": "^2.15.7",
         "parse-srt": "^1.0.0-alpha",
         "srt-convert-json": "^1.0.3",
         "vee-validate": "^3.4.13",
+        "vue-chartjs": "^3.4.0",
         "vue-plyr": "^7.0.0",
         "vuetify": "^2.5.5"
     },
