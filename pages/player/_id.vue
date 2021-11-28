@@ -23,7 +23,7 @@
       </div>
 
       <div class="karaoke_banner">
-        <div class="neon-sign" v-html="lyrics" v-if="scoreReady == false"></div>
+        <div class="neon-sign" v-text="lyrics" v-if="scoreReady == false"></div>
 
         <div v-if="scoreReady == true">
           <div class="neon-sign">Obtained score: {{ matchPercentage }} %</div>
