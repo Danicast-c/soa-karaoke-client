@@ -494,7 +494,7 @@ export default {
     },
     postScore() {
       let scoreData = {
-        song_id: this.$route.params.id,
+        song: this.$route.params.id,
         score: this.matchPercentage.toString(),
         // user_id: this.user_id
       };
