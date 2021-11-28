@@ -9,12 +9,11 @@ let maxLength = (propertyType, maxLength) => {
 }
 
 let emailFormat = () => {
-  // safe email regex
-  // https://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address
-  return v => v && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || 'Invalid email format'
 
-  // let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,24})+$/
-  // return v => v && regex.test(v) || "Must be a valid email"
+  // RFC 5322 email address regex
+  // https://emailregex.com/
+  let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return v => v && emailRegex.test(v) || "Must be a valid email."
 }
 
 export default {
