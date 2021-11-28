@@ -10,6 +10,11 @@
       </v-btn>
       <v-spacer />
       <div v-if="$auth.loggedIn">
+        <v-btn text to="/stats">
+          Statistics
+          <v-icon>mdi-chart-bar</v-icon>
+        </v-btn>
+          
         <v-btn
           v-if="$auth.user.role != 'regular' && $route.name == 'index'"
           text

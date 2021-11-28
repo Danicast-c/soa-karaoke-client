@@ -1,8 +1,8 @@
 import {
-  Bar
+  Pie
 } from 'vue-chartjs'
 export default {
-  extends: Bar,
+  extends: Pie,
   props: {
     chartdata: {
       type: Object,
