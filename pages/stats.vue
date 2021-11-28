@@ -1,11 +1,12 @@
 <template>
   <div>
-    <button @click="updateStatsChart()">Update</button>
+    <v-container>
+    <!-- <button @click="updateStatsChart()">Update</button> -->
 
     <h1>Played Songs Over Time</h1>
     <line-chart v-if="loaded" :chart-data="statsChartData" :height="150" />
 
-    <h1>Personal Highscores Songs</h1>
+    <h1>Personal Highscores</h1>
     <bar-chart
       v-if="loaded"
       :chartdata="highscoresChartData"
@@ -13,13 +14,14 @@
       :height="150"
     />
 
-    <h1>Personal Highscores Songs</h1>
+    <h1>Most Played Artists</h1>
     <pie-chart
       v-if="loaded"
       :chartdata="artistsChartData"
       :options="artistsChartOptions"
       :height="150"
     />
+    </v-container>
   </div>
 </template>
 
@@ -53,12 +55,21 @@ export default {
         datasets: [
           {
             label: "Highscores",
-            backgroundColor: "rgba(255,99,132,0.2)",
-            borderColor: "rgba(255,99,132,1)",
+            // backgroundColor: "rgba(255,99,132,0.2)",
+            // borderColor: "rgba(255,99,132,1)",
             borderWidth: 1,
-            hoverBackgroundColor: "rgba(255,99,132,0.4)",
-            hoverBorderColor: "rgba(255,99,132,1)",
-            data: this.highscores.map(score => score.highscore)
+            // hoverBackgroundColor: "rgba(255,99,132,0.4)",
+            hoverBackgroundColor: "rgba(125,125,125,0.4)",
+            // hoverBorderColor: "rgba(255,99,132,1)",
+            data: this.highscores.map(score => score.highscore),
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
           }
         ]
       };
@@ -72,11 +83,13 @@ export default {
           {
             label: "Played Songs",
             backgroundColor: "rgba(255,99,132,0.2)",
-            borderColor: "rgba(255,99,132,1)",
+            borderColor: "rgba(255,99,132,200)",
             borderWidth: 1,
             hoverBackgroundColor: "rgba(255,99,132,0.4)",
             hoverBorderColor: "rgba(255,99,132,1)",
-            data: this.userStats.map(stat => stat.total)
+            data: this.userStats.map(stat => stat.total),
+            
+           
           }
         ]
       };
@@ -89,12 +102,20 @@ export default {
         datasets: [
           {
             label: "Played Songs",
-            backgroundColor: "rgba(255,99,132,0.2)",
-            borderColor: "rgba(255,99,132,1)",
+            // backgroundColor: "rgba(255,99,132,0.2)",
+            // borderColor: "rgba(255,99,132,1)",
             borderWidth: 1,
-            hoverBackgroundColor: "rgba(255,99,132,0.4)",
-            hoverBorderColor: "rgba(255,99,132,1)",
-            data: responseartists.map(artist => artist.total)
+            hoverBackgroundColor: "rgba(125,125,125,0.4)",
+            // hoverBorderColor: "rgba(255,99,132,1)",
+            data: responseartists.map(artist => artist.total),
+             backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
           }
         ]
       };
